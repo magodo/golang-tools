@@ -335,8 +335,8 @@ func (g graph) somepath(from, to string) error {
 		}
 		return false
 	}
-	maxEdgesInGraph := len(g) * (len(g) - 1)
-	if !dfs(make([]edge, 0, maxEdgesInGraph), from) {
+	maxNodesInGraph := len(g)
+	if !dfs(make([]edge, 0, maxNodesInGraph), from) {
 		return fmt.Errorf("no path from %q to %q", from, to)
 	}
 	return nil
